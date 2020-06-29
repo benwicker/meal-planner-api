@@ -1,1 +1,1 @@
-web: tsc-watch --onSuccess "node ./dist/server.js"
+web: npx pm2 start pm2.yaml
