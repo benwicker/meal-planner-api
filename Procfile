@@ -1,1 +1,1 @@
-web: npm run dev
+web: tsc-watch --onSuccess "node ./dist/server.js"
