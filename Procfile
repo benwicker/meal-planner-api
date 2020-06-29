@@ -1,1 +1,1 @@
-web: npx pm2 start pm2.yaml
+web: pm2-runtime start ecosystem.config.js --env production
