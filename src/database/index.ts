@@ -2,6 +2,8 @@ import { createConnection, getConnectionOptions } from "typeorm";
 import Entities from './entities';
 
 export const initializeDbConnection = async () => {
+    console.log("Setting up db connection");
+
     // read connection options from ormconfig file (or ENV variables)
     const connectionOptions = await getConnectionOptions();
 
