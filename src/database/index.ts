@@ -1,4 +1,4 @@
-import { createConnection, getConnectionOptions } from "typeorm";
+import { createConnection, getConnectionOptions, getConnection } from "typeorm";
 import Entities from './entities';
 
 export const initializeDbConnection = async () => {
@@ -16,3 +16,8 @@ export const initializeDbConnection = async () => {
     .then(() => console.log("Connected"))
     .catch(() => console.log("Failed to connect to db"));
 };
+
+export const closeDbConnection = async () => {
+    const connection = getConnection();
+    connection.close();
+}

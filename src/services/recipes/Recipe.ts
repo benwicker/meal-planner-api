@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinTable } from "typeorm";
+import { Ingredient } from "./Ingredient";
 
 @Entity()
 export class Recipe {
@@ -19,4 +20,13 @@ export class Recipe {
 
     @Column()
     serves: string;
+
+    @Column()
+    directions: string;
+
+    @OneToMany(type => Ingredient, ingredient => ingredient.recipe, {
+        cascade: true,
+    })
+    @JoinTable()
+    ingredients: Ingredient[];
 }
