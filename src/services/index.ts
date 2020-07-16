@@ -1,3 +1,4 @@
 import searchRoutes from "./search/routes";
+import recipeRoutes from "./recipes/routes";
 
-export default [...searchRoutes];
+export default [...searchRoutes, ...recipeRoutes];

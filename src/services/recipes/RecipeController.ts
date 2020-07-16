@@ -13,6 +13,7 @@ export const getRecipeById = async (id: number) => {
 
 export const saveRecipe = async (recipe: Recipe) => {
     await getRepository(Recipe).save(recipe);
+    return recipe.id;
 }
 
 export const deleteRecipe = async (id: number) => {

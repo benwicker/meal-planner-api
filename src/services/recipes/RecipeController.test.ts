@@ -39,7 +39,7 @@ describe("RecipeService", () => {
     });
 
     test("get a specific recipe", async () => {
-        const recipe = await getRecipeById(10);
+        const recipe = await getRecipeById(9);
         console.log(recipe);
         expect(recipe).toBeTruthy();
     });
