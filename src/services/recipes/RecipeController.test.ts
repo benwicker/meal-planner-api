@@ -23,7 +23,7 @@ var testRecipe: Recipe = {
     ingredients: [ingredient1, ingredient2],
 };
 
-describe("RecipeService", () => {
+describe("RecipeController", () => {
     beforeAll(async () => {
         await initializeDbConnection();
     });
@@ -34,13 +34,11 @@ describe("RecipeService", () => {
 
     test("get all recipes", async () => {
         const recipes = await getRecipes();
-        console.log(recipes);
         expect(recipes).toBeTruthy();
     });
 
     test("get a specific recipe", async () => {
         const recipe = await getRecipeById(9);
-        console.log(recipe);
         expect(recipe).toBeTruthy();
     });
 
