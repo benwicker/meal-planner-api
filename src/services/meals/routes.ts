@@ -41,7 +41,6 @@ export default [
         path: "/meal/:id",
         method: "delete",
         handler: async (req: Request, res: Response) => {
-            console.log(+req.params.id);
             await deleteMeal(+req.params.id);
             res.sendStatus(200);
         }

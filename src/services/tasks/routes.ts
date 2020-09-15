@@ -23,16 +23,18 @@ export default [
         path: "/task",
         method: "post",
         handler: async (req: Request, res: Response) => {
-            if (req.body.isArray()) {
-                const tasks: Task[] = req.body;
-                await saveTasks(tasks);
-                res.sendStatus(200);
-            }  
-            else {
-                const task: Task = req.body;
-                const id = await saveTask(task);
-                res.send(id.toString());
-            }
+            const task: Task = req.body;
+            const id = await saveTask(task);
+            res.send(id.toString());
         }
-    }
+    },
+    {
+        path: "/task/range",
+        method: "post",
+        handler: async (req: Request, res: Response) => {
+            const tasks: Task[] = req.body;
+            await saveTasks(tasks);
+            res.sendStatus(200);
+        }
+    },
 ]

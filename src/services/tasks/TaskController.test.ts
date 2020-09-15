@@ -23,9 +23,4 @@ describe("TaskController", () => {
         const tasks = await getTasks();
         expect(tasks).toBeTruthy();
     });
-
-    test("get completed tasks", async () => {
-        const tasks = await getTasks();
-        expect(tasks).toBeTruthy();
-    });
 })
