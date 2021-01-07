@@ -20,3 +20,7 @@ export const getCompletedTasks = async () => {
     const tasks = await getRepository(Task).find({ where: { isCompleted: true }});
     return tasks;
 };
+
+export const deleteTask = async (id: number) => {
+    await getRepository(Task).delete(id);
+}
