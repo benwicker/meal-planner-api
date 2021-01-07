@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getTasks, getCompletedTasks, saveTask, saveTasks } from "./TaskController";
+import { getTasks, getCompletedTasks, saveTask, saveTasks, deleteTask } from "./TaskController";
 import { Task } from "./Task";
 
 export default [
@@ -26,6 +26,14 @@ export default [
             const task: Task = req.body;
             const id = await saveTask(task);
             res.send(id.toString());
+        }
+    },
+    {
+        path: "/task/:id",
+        method: "delete",
+        handler: async (req: Request, res: Response) => {
+            await deleteTask(+req.params.id);
+            res.sendStatus(200);
         }
     },
     {
