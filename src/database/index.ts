@@ -9,7 +9,7 @@ export const initializeDbConnection = async () => {
 
     // do something with connectionOptions,
     // for example append a custom naming strategy or a custom logger
-    Object.assign(connectionOptions, { entities: Entities});
+    Object.assign(connectionOptions, { "entities": Entities});
 
     // create a connection using modified connection options
     const connection = await createConnection(connectionOptions)
