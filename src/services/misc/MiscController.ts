@@ -4,9 +4,9 @@ import { initializeDbConnection } from '../../database';
 
 export const checkConnection = async () => {
   try {
-    initializeDbConnection();
-    const recipes = await getRepository(Recipe).find({ take: 1 });
-    return recipes;
+    options = initializeDbConnection();
+    // const recipes = await getRepository(Recipe).find({ take: 1 });
+    return options;
   } catch (e) {
     return e;
   }

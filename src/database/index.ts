@@ -15,6 +15,8 @@ export const initializeDbConnection = async () => {
     const connection = await createConnection(connectionOptions)
     .then(() => console.log("Connected"))
     .catch(err => console.log("Failed to connect to db", err));
+
+    return connectionOptions;
 };
 
 export const closeDbConnection = async () => {
